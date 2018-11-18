@@ -1,1 +1,75 @@
-https://repl.it/@Dianas92/LightcyanLimpingCarriers
+class animal :
+ name = '111'
+ hungry = True
+ wool = False
+ eggs = False
+ milk = False
+ weight = 0
+ def __init__(self,name = '',weight = 100):  
+       self.name = name
+       self.weight = weight
+ 
+ def feed (self):
+  print('кормим')
+  if self.hungry :
+    self.hungry = False
+    print('Покормили')
+  else:
+      print('Не хочет есть')
+
+ def collect_eggs (self):
+  if self.eggs :
+    print('Собрали яйца')
+  else:
+    print('Не несет яйца')
+ 
+ def collect_milk (self):
+  if self.milk :
+    print('Подоили')
+  else:
+    print('Не дает молока')
+
+ def collect_wool (self):
+  if self.wool :
+    print('Постригли')
+  else:
+    print('Нельзя постричь')
+
+      
+
+class cow (animal):
+  milk = True
+  voice = 'Muuu'
+  
+class goat (animal):
+  milk = True
+  voice = 'Meee'
+  
+class sheep (animal):
+  wool = True
+  voice = 'Beee'
+
+class birds (animal):
+  eggs = True
+
+class chiken (birds):
+  voice = 'Kokoko' 
+
+class duck (birds):
+  voice = 'Krya' 
+
+class goose (birds):
+  voice = 'Gaga' 
+
+animal_1 = goose('Серый', 9)
+animal_2 = goose('Белый', 10)
+animal_3 = cow('Манька', 300)
+animal_4 = sheep('Барашек', 46)
+animal_5 = sheep('Кудрявый', 48)
+animal_6 = chiken('Ко-Ко', 3)
+animal_7 = chiken('Кукареку', 4)
+animal_8 = goat('Рога', 40)
+animal_9 = goat('Копыта', 43)
+animal_10 = duck('Кряква', 5)
+
+
