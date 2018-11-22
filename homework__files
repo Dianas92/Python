@@ -1,0 +1,15 @@
+#Задача №1
+f = open('cook_book.txt','rt')
+
+cook_book = {}
+for line in f :
+  dish = line.strip()
+  cook_book[dish]=list()
+  prod_count = f.readline().strip()
+
+  for i in range(int(prod_count)):
+   a=f.readline().strip().split(' | ')
+   cook_book[dish].append({'ingridient_name': a[0], 'quantity': a[1], 'measure': a[2]})
+  f.readline().strip()
+
+print(cook_book)
