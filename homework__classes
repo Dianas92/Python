@@ -1,3 +1,4 @@
+weight_list =[]
 class animal :
  name = '111'
  hungry = True
@@ -8,6 +9,7 @@ class animal :
  def __init__(self,name = '',weight = 100):  
        self.name = name
        self.weight = weight
+       weight_list.append([name,weight])
  
  def feed (self):
   print('кормим')
@@ -71,5 +73,17 @@ animal_7 = chiken('Кукареку', 4)
 animal_8 = goat('Рога', 40)
 animal_9 = goat('Копыта', 43)
 animal_10 = duck('Кряква', 5)
-
-
+print(weight_list)
+name = ''
+weight = 0
+animal_count= 0
+common_weight = 0
+for animal_name in weight_list:
+  if animal_name[1]>weight:
+    name=animal_name[0]
+    weight=animal_name[1]
+  animal_count = animal_count + 1
+  common_weight +=animal_name[1]
+print('Общий вес равен',common_weight)
+print('Больше всех весит',name,weight)
+print('Средний вес равен',common_weight/animal_count)
