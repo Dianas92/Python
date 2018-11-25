@@ -1,4 +1,3 @@
-#Задача №1
 f = open('cook_book.txt','rt')
 
 cook_book = {}
@@ -11,5 +10,21 @@ for line in f :
    a=f.readline().strip().split(' | ')
    cook_book[dish].append({'ingridient_name': a[0], 'quantity': a[1], 'measure': a[2]})
   f.readline().strip()
-
+print('Результат задачи №1')
 print(cook_book)
+
+
+def get_shop_list_by_dishes(dishes, person_count):
+  prod_dict = {}
+  for dish_name in dishes: 
+    for prod_name in cook_book[dish_name]:
+      
+      if prod_name['ingridient_name'] in prod_dict:
+       prod_dict[prod_name['ingridient_name']]['quantity'] = prod_dict[prod_name['ingridient_name']]['quantity'] + int(prod_name['quantity'])*person_count
+
+      else:
+       prod_dict[prod_name['ingridient_name']]={'measure':prod_name['measure'],'quantity':int(prod_name['quantity'])*person_count}
+     
+  return(prod_dict)
+print('Результат задачи №2')
+print(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 2))
