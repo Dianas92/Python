@@ -57,11 +57,11 @@ def add_new_doc():
 
 # n -команда,которая выведет имена владельцев документов
 def name_people():
-  try:
-      for string_documents in documents:
-       print(string_documents['name'])
-  except KeyError:
-      print('Поля с именем не существует')
+  for string_documents in documents:
+   try:
+     print(string_documents['name'])
+   except KeyError:
+     print('Поля с именем не существует')
   return('')
   
 command = ''
@@ -78,3 +78,4 @@ while command != 'x':
   print(add_new_doc()) 
  elif command =='n' :
    print(name_people()) 
+
