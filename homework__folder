@@ -1,0 +1,25 @@
+import os
+
+migrations = 'Migrations'
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+if __name__ == '__main__':
+
+
+    file_list = os.listdir(path=migrations)
+
+    counter = 10
+    while counter > 0:
+        user_string = input('Введите строку: ')
+        new_list = []
+        counter = 0
+        for file_name in file_list:
+            if file_name.find(user_string) != -1:
+            print(file_name)
+            new_list.append(file_name)
+            counter+=1
+
+        print('Найдено',counter,'файлов')
+        file_list=new_list
+
+ 
