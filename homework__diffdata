@@ -1,4 +1,4 @@
-# функция чтения файлов
+# функция чтения файла
 def read_files(name):
 
     import json
