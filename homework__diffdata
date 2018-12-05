@@ -37,7 +37,7 @@ def sort_top(word_value):
     for word in sort_list:
         top_10[count] = word        
         count += 1        
-        if count == 10:
+        if count == 11:
             break
     return top_10
 # функция, которая запрашивает имя файла и запускает другие функции
