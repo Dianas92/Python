@@ -1,0 +1,31 @@
+import datetime as dt 
+import timeit 
+
+class TimingManager(object): 
+  clock = timeit.default_timer 
+  print(clock)
+
+def __enter__(self): 
+  self.start = self.clock() 
+  self.log('\n=> Start Timing: {}') 
+
+  return self 
+
+def __exit__(self, exc_type, exc_val, exc_tb): 
+  self.endlog() 
+  return False 
+
+def log(self, s, elapsed=None): 
+ print(s.format(self._secondsToStr(self.clock()))) 
+ if (elapsed is not None):
+   print('Elapsed time: {}\n'.format(elapsed))
+
+def endlog(self): 
+  self.log('=> End Timing: {}', self.now()) 
+
+def now(self): 
+    
+ return str(dt.timedelta(seconds = self.clock() - self.start)) 
+
+def _secondsToStr(self, sec): 
+ return str(dt.datetime.fromtimestamp(sec)) 
