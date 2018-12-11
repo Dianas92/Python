@@ -1,8 +1,7 @@
-# функция чтения файла
-def read_files(name):
+import json
+import chardet
 
-    import json
-    import chardet
+def read_files(name):
  
     with open(name, 'rb') as jsonfile:
         data = jsonfile.read()
@@ -14,10 +13,9 @@ def read_files(name):
            text += ' ' + items['description']
         return text
 
-# функция подсчета слов длиннее 6 символов
 def count_word(text):
     
-    to_list = text.split(' ')
+    to_list = text.lower().split(' ')
     word_value = {}
     for word in to_list: 
         if len(word) > 6:
@@ -27,7 +25,7 @@ def count_word(text):
                 word_value[word] = 1
     return word_value 
   
-# функция вывода ТОП-10
+ 
 def sort_top(word_value):
    
     l = lambda word_value: word_value[1]
@@ -40,19 +38,10 @@ def sort_top(word_value):
         if count == 11:
             break
     return top_10
-# функция, которая запрашивает имя файла и запускает другие функции
-def main():
-    
-    while True:
-        name = input('Введите имя файла:')
-        if name == 'newsafr.json':
-          
-            top_10 = sort_top(count_word(read_files(name)))
-            for i in top_10.values():
-                print (i[1], ': ', i[0])
-        elif name == 'exit':
-            break
-        else:
-            print('Попробуйте ввести имя еще раз')
-        
-main()
+
+name = 'newsafr.json'
+top_10 = sort_top(count_word(read_files(name)))
+for i in top_10.values():
+  print (i[1], ': ', i[0])
+  
+
